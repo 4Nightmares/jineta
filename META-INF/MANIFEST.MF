@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Main-Class: de.nm_soft.jineta.VStart
+
+Name: de.nm_soft.jineta
+Package-Title: "jineta 2005 Main-Classes"
+
+Name: de.nm_soft.jineta.plugins
+Package-Title: "jineta 2005 Plugins"
+
+Name: lang
+Package-Title: "jineta 2005 Localization-Files"
+
+Name: libwin
+Package-Title: "jineta 2005 Windows-Helper-Files"
+
+Name: icons
+Package-Title: "jineta 2005 Icon-Files"
+
+Name: docs
+Package-Title: "jineta 2005 Documentation-Files"
+
+Name: help
+Package-Title: "jineta 2005 Help-Files"
+
