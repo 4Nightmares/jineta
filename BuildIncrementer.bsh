@@ -1,0 +1,4 @@
+source("Incrementer_top.stub");
+n[3]++;
+source("Incrementer_bottom.stub");
+project.setProperty("version", ver);

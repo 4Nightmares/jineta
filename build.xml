@@ -1,0 +1,63 @@
+<project name="jineta" default="dist" basedir=".">
+	<property name="src" location="java/de/nm_soft/jineta"/>
+	<property name="srcplugin" location="java/de/nm_soft/jineta/plugins"/>
+	
+	<property name="manifest" location="META-INF"/>
+	<property name="dbg" value="yes"/>
+	<property name="dir.src"   value="java"/>
+	<property name="dir.lib"     value="lib"/>
+	<property name="dir.build"   value="build"/>
+	<property name="dir.bin"   value="build"/>
+	<property name="dir.dist" location="dist"/>
+	<path id="classpath">
+		<fileset dir="${dir.lib}" includes="**/*.jar"/>
+	</path>
+
+	<target name="clean">
+		<delete dir="build"/>
+		<delete dir="dist"/>
+	</target>
+
+	<target name="compile"
+        description="compile the source " >
+		<!--  <script language="beanshell"> <![CDATA[
+      source("BuildIncrementer.bsh");
+    ]]></script>
+    <echo message="Building jineta Version ${version}"/>
+    <replaceregexp match="(V|v)ersion \d+\.\d+\.\d+\.\d+" replace="\1ersion ${version}">
+      <fileset dir="./" includes="**/*.java **/MANIFEST.MF **/jineta.ver **/jineta.version"/>
+    </replaceregexp> -->
+		<mkdir dir="build"/>
+		<javac srcdir="${dir.src}" destdir="${dir.build}"  
+    	debug="${dbg}" includeantruntime="false" 
+    	classpathref="classpath"/>
+	</target>
+
+	<target name="dist" depends="compile"
+        description="generate the distribution" >
+		<mkdir dir="${dir.dist}"/>
+		<jar jarfile="${dir.dist}/jineta.jar" basedir="${dir.build}" 
+			manifest="META-INF/MANIFEST.MF" index="yes">
+			<fileset dir="./" includes="icons/*.gif"/>
+			<fileset dir="./" includes="libwin/*"/>
+			<fileset dir="./" includes="help/**/*"/>
+			<fileset dir="./" includes="lang/*.properties"/>
+			<fileset dir="./" includes="Vineta.dtd Empty.xml jineta.xsd"/>
+		</jar>
+		<!--
+		<exec dir="${dir.bin}" executable="md5sum" output="${bin}/jineta.pack.gz.md5">
+			<arg line="-\-binary jineta.pack.gz"/>
+		</exec>
+		<exec dir="${dir.bin}" executable="md5sum">
+			<arg line="-\-check jineta.pack.gz.md5"/>
+		</exec>-->
+	</target>
+
+	<target name="doc"
+        description="create javadocs " >
+		<javadoc destdir="docs/">
+			<fileset dir="${dir.src}" includes="**/*.java"/>
+		</javadoc>
+	</target>
+
+</project>

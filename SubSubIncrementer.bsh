@@ -1,0 +1,5 @@
+source("Incrementer_top.stub");
+n[2]++;
+n[3] = 0;
+source("Incrementer_bottom.stub");
+

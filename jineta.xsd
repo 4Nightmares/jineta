@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:annotation>
+    <xs:appinfo>
+      <appName>jineta</appName>
+      <appVersion>4.0</appVersion>
+      <type>recipes</type>
+      <version>0.4</version>
+      <date>16.04.2005</date>
+      <author>Frank Tusche</author>
+    </xs:appinfo>
+  </xs:annotation>
+
+  <xs:simpleType name="shortStringType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="2048"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="baseType">
+    <xs:choice>
+      <xs:element name="Name" type="shortStringType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Rubrik" type="shortStringType" minOccurs="0" maxOccurs="1"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:simpleType name="yesNoType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="3"/>
+      <xs:enumeration value="ja"/>
+      <xs:enumeration value="nein"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="baseRecipeType">
+    <xs:simpleContent>
+      <xs:extension base="baseType">
+        <xs:attribute name="alcoholhaltig" type="yesNoType"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="scoreType">
+    <xs:restriction base="xs:unsignedByte">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="6"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="ingredientsType">
+    <xs:element name="Zutat" type="shortStringType" minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+
+  <xs:complexType name="toolsType">
+    <xs:element name="Zubehoer" type="shortStringType" minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+
+  <xs:complexType name="decorationsType">
+    <xs:element name="Dekoration" type="shortStringType" minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+
+  <xs:complexType name="textType">
+    <xs:element name="A" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+
+  <xs:complexType name="recipeType">
+    <xs:extension base="baseRecipeType">
+      <xs:choice>
+        <xs:element name="Geschmack" type="shortStringType" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="Wertung" type="scoreType" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="Zutaten" type="ingredientsType" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="Zubehoere" type="toolsType" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="Dekorationen" type="decorationsType" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="Anleitung" type="textType" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="Bemerkung" type="textType" minOccurs="0" maxOccurs="1"/>
+      </xs:choice>
+    </xs:extension>
+  </xs:complexType>
+
+  <xs:element name="Rezepte">
+    <xs:choice>
+      <xs:element name="Rezept" type="recipeType" minOccurs="0" maxOccurs="unbounded"/>
+
+      <xs:element name="Tip" minOccurs="0" maxOccurs="unbounded">
+        <xs:extension type="baseType">
+          <xs:sequence>
+            <xs:element name="Text" type="xs:any" minOccurs="0" maxOccurs="1"/>
+          </xs:sequence>
+        </xs:extension>
+      </xs:element>
+
+      <xs:element name="Information" minOccurs="0" maxOccurs="unbounded">
+        <xs:extension type="baseType">
+          <xs:sequence>
+            <xs:element name="Text" type="textType" minOccurs="0" maxOccurs="1"/>
+          </xs:sequence>
+        </xs:extension>
+      </xs:element>
+    </xs:choice>
+  </xs:element>
+
+</xs:schema>

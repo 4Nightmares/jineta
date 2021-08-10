@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+#filetype:	Vineta Recipe Database
+#version:	3.0
+-->
+<!DOCTYPE Rezepte SYSTEM "Vineta.dtd">
+<Rezepte>
+ <Rezept>
+  <Name>Tester</Name>
+  <Zutaten>
+   <Zutat>&lt;L&gt;1 ml Mililiter</Zutat>
+   <Zutat>1,5 l Liter</Zutat>
+   <Zutat>2.5 cm Zentimeter</Zutat>
+   <Zutat>1/2 Stück</Zutat>
+   <Zutat>2 1/3 Stück</Zutat>
+   <Zutat>¾ Äpfel</Zutat>
+   <Zutat>1¼ l Wasser</Zutat>
+   <Zutat>7½ Orangenschalenraspel&lt;/L&gt;</Zutat>
+  </Zutaten>
+  <Bemerkung>
+   <A>&lt;F&gt;für 12 Personen&lt;/F&gt;</A>
+  </Bemerkung>
+ </Rezept>
+
+ <Rezept>
+  <Name>Tester 2</Name>
+  <Zutaten>
+   <Zutat>1 ml Mililiter</Zutat>
+   <Zutat>1,5 l Liter</Zutat>
+   <Zutat>2.5 cm Zentimeter</Zutat>
+   <Zutat>1/2 Stück</Zutat>
+   <Zutat>2 1/3 Stück</Zutat>
+   <Zutat>¾ Äpfel</Zutat>
+   <Zutat>1¼ l Wasser</Zutat>
+   <Zutat>7½ Orangenschalenraspel</Zutat>
+  </Zutaten>
+  <Bemerkung>
+   <A>Yield: 4 Servings</A>
+  </Bemerkung>
+ </Rezept>
+
+ <Rezept Wertung="6">
+  <Name>Was kann jineta?</Name>
+  <Rubrik>Fähigkeiten</Rubrik>
+  <Geschmack>Fühlt sich gut an!</Geschmack>
+  <Zutaten>
+   <Zutat>&lt;L&gt;Ein super Programm&lt;/L&gt;</Zutat>
+  </Zutaten>
+  <Zubehoere>
+   <Zubehoer>&lt;L&gt;Maus</Zubehoer>
+   <Zubehoer>Tastatur</Zubehoer>
+   <Zubehoer>Bildschirm&lt;/L&gt;</Zubehoer>
+  </Zubehoere>
+  <Dekorationen>
+   <Dekoration>&lt;L&gt;Ein modernes Windows&lt;/L&gt;</Dekoration>
+  </Dekorationen>
+  <Anleitung>
+   <A>Absatz 1: ohne jegliche Formatierung wirkt das Ganze ein wenig langweilig...</A>
+   <A>Absatz 2: Deshalb gibt es &lt;F&gt;&lt;K&gt;Di&lt;/F&gt;nge&lt;/K&gt; wie &lt;F&gt;Fettschrift&lt;/F&gt;, &lt;K&gt;Kursivschrift&lt;/K&gt; und &lt;U&gt;Unterstreichen&lt;/U&gt;. Das geht auch &lt;F&gt;&lt;K&gt;&lt;U&gt;zusammen&lt;/U&gt;&lt;/K&gt;&lt;/F&gt;.</A>
+   <A>Oder wie wäre es mit einer Liste?</A>
+   <A>&lt;L&gt;Listeintrag</A>
+   <A>Listeintrag</A>
+   <A>&lt;/L&gt;</A>
+   <A>Oder vielleicht sogar eine automatische Numerierung?</A>
+   <A>&lt;N&gt;Listeintrag</A>
+   <A>Listeintrag&lt;/N&gt;</A>
+  </Anleitung>
+  <Bemerkung>
+   <A>Die aktuelle Version ist immer unter</A>
+   <A>&lt;F&gt;KLICK &gt;&gt;&lt;/F&gt; http://www.tusche-welt.de/jineta.html &lt;F&gt;&lt;&lt; KLICK&lt;/F&gt;</A>
+   <A>zu finden.</A>
+   <A>Bei Fragen, die die Hilfe nicht beantwortet, stehen wir Ihnen unter</A>
+   <A>&lt;F&gt;KLICK &gt;&gt;&lt;/F&gt; mailto:jineta@tusche-welt.de &lt;F&gt;&lt;&lt; KLICK&lt;/F&gt;</A>
+   <A>zur Verfügung.</A>
+   <A>Absatz 1: ohne jegliche Formatierung wirkt das Ganze ein wenig langweilig...</A>
+   <A>Absatz 2: Deshalb gibt es Dinge wie &lt;F&gt;Fettschrift&lt;/F&gt;, &lt;K&gt;Kursivschrift&lt;/K&gt; und &lt;U&gt;Unterstreichen&lt;/U&gt;. Das geht auch &lt;F&gt;&lt;K&gt;&lt;U&gt;zusammen&lt;/U&gt;&lt;/K&gt;&lt;/F&gt;.</A>
+   <A>Oder wie wäre es mit einer Liste?</A>
+   <A>&lt;L&gt;Listeintrag</A>
+   <A>Listeintrag</A>
+   <A>&lt;/L&gt;</A>
+   <A>Oder vielleicht sogar eine automatische Numerierung?</A>
+   <A>&lt;N&gt;Listeintrag</A>
+   <A>Listeintrag</A>
+   <A>&lt;/N&gt;</A>
+   <A>Absatz 1: ohne jegliche Formatierung wirkt das Ganze ein wenig langweilig...</A>
+   <A>Absatz 2: Deshalb gibt es Dinge wie &lt;F&gt;Fettschrift&lt;/F&gt;, &lt;K&gt;Kursivschrift&lt;/K&gt; und &lt;U&gt;Unterstreichen&lt;/U&gt;. Das geht auch &lt;F&gt;&lt;K&gt;&lt;U&gt;zusammen&lt;/U&gt;&lt;/K&gt;&lt;/F&gt;.</A>
+   <A>Oder wie wäre es mit einer Liste?</A>
+   <A>&lt;L&gt;Listeintrag</A>
+   <A>Listeintrag</A>
+   <A>&lt;/L&gt;</A>
+   <A>Oder vielleicht sogar eine automatische Numerierung?</A>
+   <A>&lt;N&gt;Listeintrag</A>
+   <A>Listeintrag</A>
+   <A>&lt;/N&gt;</A>
+   <A>Absatz 1: ohne jegliche Formatierung wirkt das Ganze ein wenig langweilig...</A>
+   <A>Absatz 2: Deshalb gibt es Dinge wie &lt;F&gt;Fettschrift&lt;/F&gt;, &lt;K&gt;Kursivschrift&lt;/K&gt; und &lt;U&gt;Unterstreichen&lt;/U&gt;. Das geht auch &lt;F&gt;&lt;K&gt;&lt;U&gt;zusammen&lt;/U&gt;&lt;/K&gt;&lt;/F&gt;.</A>
+   <A>Oder wie wäre es mit einer Liste?</A>
+   <A>&lt;L&gt;Listeintrag</A>
+   <A>Listeintrag</A>
+   <A>&lt;/L&gt;</A>
+   <A>Oder vielleicht sogar eine automatische Numerierung?</A>
+   <A>&lt;N&gt;Listeintrag</A>
+   <A>Listeintrag&lt;/N&gt;</A>
+  </Bemerkung>
+ </Rezept>
+
+</Rezepte>

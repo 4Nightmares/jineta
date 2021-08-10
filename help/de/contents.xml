@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<help title="Inhalt" url="index.html">
+  <section name="Einträge">
+    <article url="Rubriken.html" name="Hinweise zu Rubriken"/>
+  </section>
+  <section name="Suchen">
+    <article url="Suche.html" name="Suchen"/>
+    <article url="SuchePlus.html" name="Experten-Suche"/>
+  </section>
+  <section name="Extras">
+    <article url="Mengenrechner.html" name="Mengen-Rechner"/>
+    <article url="Makros.html" name="JavaScript-Makros"/>
+  </section>
+  <section name="Sonstiges">
+    <article url="Drucken.html" name="Hinweise zum Drucken"/>
+    <article url="FAQ.html" name="Häufig gestellte Fragen"/>
+    <article url="Registrierung.html" name="Registrieren?"/>
+    <article url="Legal.html" name="Lizenzbedingungen"/>
+    <article url="UnInst.html" name="Deinstallieren"/>
+  </section>
+</help>

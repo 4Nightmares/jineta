@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20050223;21470387">
+	<META NAME="CHANGEDBY" CONTENT="Frank Tusche">
+	<META NAME="CHANGED" CONTENT="20060322;21283600">
+	<STYLE>
+	<!--
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		P { margin-bottom: 0.21cm }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="de-DE" DIR="LTR">
+<H2>JavaScript-Makros</H2>
+<H3>Wie aktiviere ich die Makro-Unterst&uuml;tzung in jineta?</H3>
+<P>Um Makros innerhalb von jineta Nutzen zu k&ouml;nnen, wird die
+ECMAScript bzw. JavaScript Implementierung Rhino aus dem
+mozilla-Projekt ben&ouml;tigt. Dieses ist unter
+<A HREF="http://www.mozilla.org/rhino">http://www.mozilla.org/rhino</A>
+zu finden. Dort ist auch eine ausf&uuml;hrliche Dokumentation mit
+Tutorials hinterlegt.</P>
+<P>Damit jineta Rhino findet muss die zugeh&ouml;rige jar-Datei
+(rhino.jar bzw. js.jar) im CLASSPATH eingef&uuml;gt sein. Weiterhin
+mu&szlig; der Aufruf von jineta etwas angepa&szlig;t werden:</P>
+<P>statt</P>
+<P><CODE>java -jar jineta.jar</CODE></P>
+<P>verwendet man f&uuml;r die bash-Shell:</P>
+<P><CODE>java -Xbootclasspath/a:$CLASSPATH -jar jineta.jar</CODE></P>
+<P>und f&uuml;r Windows:</P>
+<P><CODE>java -Xbootclasspath/a:%CLASSPATH% -jar jineta.jar</CODE></P>
+<P>Die Makro-Unterst&uuml;tzung wird dann automatisch aktiviert.</P>
+<H3>Was kann ich mit den Makros anfangen?</H3>
+<P>Als erstes steht die komplette JavaScript Sprache zur Verf&uuml;gung.
+Zus&auml;tzlich k&ouml;nnen verschiedene Objekte aus der
+Java-Laufzeitumgebung angesprochen werden. Dies ist in der
+Rhino-Dokumentation ausf&uuml;hrlich dargestellt.</P>
+<P>In jineta stehen derzeit noch drei weitere Objekte zur Verf&uuml;gung:</P>
+<UL>
+	<LI><P><CODE>application.active</CODE></P>
+	<LI><P><CODE>application.recipes</CODE></P>
+	<LI><P><CODE>recipeFactory</CODE></P>
+</UL>
+<P><CODE>application.active</CODE> zeigt immer auf den aktuell in
+jineta ausgew&auml;hlten Eintrag und ist vom Typ <CODE>Recipe</CODE>.</P>
+<P><CODE>application.recipes</CODE> ist ein <CODE>Vector&lt;Recipe&gt;</CODE>,
+der alle Eintr&auml;ge der aktuell in jineta geladenen Datenbank
+enth&auml;lt.</P>
+<P><CODE>recipeFactory</CODE> dient dem Erstellen neuer Eintr&auml;ge.</P>
+<H3>Wie komme ich an die Daten eines Eintrages heran?</H3>
+<P>Der Type <CODE>Recipe</CODE> ist wie folgt definiert:</P>
+<PRE>public interface Recipe extends Comparable&lt;Recipe&gt; {
+
+  /** This string is used for empty categories. */
+  String CAT_EMPTY = &quot;***&quot;;
+  String SUB_CAT = &quot; - &quot;;
+  int RECIPE = 1000;
+  int TIP = 1001;
+  int INFORMATION = 1002;
+
+  public int compareTo(Recipe x);
+  public int getType();
+  public void setType(int aType) throws IllegalArgumentException;
+  public String getName();
+  public void setName(String aName);
+  public String getCategory();
+  public void setCategory(String aCategory);
+  public boolean hasCategory();
+  public int getNote();
+  public void setNote(int aNote) throws IllegalArgumentException;
+  public String getTaste();
+  public void setTaste(String aTaste);
+  public boolean getAlcohol();
+  public void setAlcohol(boolean aAlcohol);
+  public Vector&lt;String&gt; getIngredients();
+  public void setIngredients(Vector&lt;String&gt; aList);
+  public void addIngredient(String aName);
+  public Vector&lt;String&gt; getDecoration();
+  public void setDecoration(Vector&lt;String&gt; aList);
+  public void addDecoration(String aName);
+  public Vector&lt;String&gt; getTools();
+  public void setTools(Vector&lt;String&gt; aList);
+  public void addTool(String aName);
+  public String getProcedure();
+  public void setProcedure(String aProcedure);
+  public String getComment();
+  public void setComment(String aComment);
+
+  public String toString();
+  public String toText();
+}</PRE>
+<P>Dies sollte selbsterkl&auml;rend sein.
+</P><P>Ein neuer Eintrag wird mittels <CODE>recipeFactory.newRecipe();</CODE> angelegt.
+Nicht vergessen diesen am Ende auch den <CODE>application.recipes</CODE> hinzuzuf&uuml;gen!</P>
+<P>-----</P>
+<P STYLE="margin-bottom: 0cm">2006 F. Tusche</P>
+</BODY>
+</HTML>
